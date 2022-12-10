@@ -6,7 +6,7 @@
 /*   By: mlamkadm <mlamkadm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:35:25 by mlamkadm          #+#    #+#             */
-/*   Updated: 2022/12/05 07:26:00 by mlamkadm         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:11:13 by mlamkadm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 #ifndef LIBFT_H
 #define LIBFT_H
 
@@ -44,12 +45,12 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void    *ft_calloc(size_t count, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
-int     ft_atoi(const char *str);
-char    *ft_itoa(int n);
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
+int		ft_atoi(const char *str);
+char	*ft_itoa(int n);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif
