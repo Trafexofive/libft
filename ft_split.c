@@ -6,7 +6,7 @@
 /*   By: mlamkadm <mlamkadm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 06:02:23 by mlamkadm          #+#    #+#             */
-/*   Updated: 2022/12/10 08:44:10 by mlamkadm         ###   ########.fr       */
+/*   Updated: 2022/12/10 13:47:14 by mlamkadm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static char	*word_alloc(const char *s, int start, int finish)
 	char	*str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	str = (char *)malloc (sizeof(char) * (finish - start + 1));
 	if (!str)
 		return (NULL);
@@ -48,18 +50,12 @@ static char	*word_alloc(const char *s, int start, int finish)
 	return (str);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_root_split(char **two_d_array, const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	int		last_occurence;
-	char	**two_d_array;
 
-	if (!s)
-		return (NULL);
-	two_d_array = (char **) malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
-	if (!two_d_array)
-		return (NULL);
 	i = 0;
 	j = 0;
 	last_occurence = -1;
@@ -76,4 +72,18 @@ char	**ft_split(const char *s, char c)
 	}
 	two_d_array[j] = 0;
 	return (two_d_array);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**two_d_array;
+
+	if (!s)
+		return (NULL);
+	two_d_array = (char **) malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
+	if (!two_d_array)
+	{
+		return (NULL);
+	}
+	return (ft_root_split(two_d_array, s, c));
 }
