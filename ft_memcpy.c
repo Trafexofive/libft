@@ -6,7 +6,7 @@
 /*   By: mlamkadm <mlamkadm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:16:32 by mlamkadm          #+#    #+#             */
-/*   Updated: 2022/12/04 05:44:06 by mlamkadm         ###   ########.fr       */
+/*   Updated: 2022/12/11 18:54:56 by mlamkadm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	if (!n)
 		return (dst);
 	i = 0;
-	dstx = (char *) dst;
+	dstx = dst;
 	srcx = (char *) src;
 	while (n > 0)
 	{
